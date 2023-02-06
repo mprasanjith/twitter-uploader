@@ -1,11 +1,8 @@
 import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "@next/font/google";
 import LoginButton from "@/components/LoginButton";
 import { Container, Flex } from "@mantine/core";
 import { useSession } from "next-auth/react";
-
-const inter = Inter({ subsets: ["latin"] });
+import Uploader from "@/components/Uploader";
 
 export default function Home() {
   const { data } = useSession();
@@ -29,7 +26,7 @@ export default function Home() {
         >
           <LoginButton />
 
-          {data && <div>Uploader</div>}
+          {data && <Uploader />}
         </Flex>
       </Container>
     </>
