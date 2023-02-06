@@ -58,12 +58,15 @@ export async function handler(req: NextApiRequest, res: NextApiResponse) {
   }
 
   const userClient = new TwitterApi({
+    //@ts-ignore
     appKey: process.env.TWITTER_KEY,
     appSecret: process.env.TWITTER_SECRET,
     // Following access tokens are not required if you are
     // at part 1 of user-auth process (ask for a request token)
     // or if you want a app-only client (see below)
+    // @ts-ignore
     accessToken: session.oauthToken,
+    // @ts-ignore
     accessSecret: session.oauthTokenSecret,
   });
 
